@@ -1,4 +1,6 @@
 /* ------------------------------- colores ---------------------------------------------- */
+$principal: rgb(36, 56, 255);
+$letrabtn: rgb(255, 255, 255);
 $sombra: rgb(128, 126, 121);
 $fondo: rgb(255, 255, 255);
 $link: rgb(38, 178, 255);
@@ -101,10 +103,12 @@ a {
   margin: 5px 0px;
   display: flex;
   flex-flow: column wrap;
-  box-shadow: 0 10px 5px $sombra;
+  box-shadow: 0 3px 5px $sombra;
+  margin: .5em;
 
-  &:hover:after {
+  &:hover {
     background-color: red;
+    top: -50%;
   }
 
   div {
@@ -115,4 +119,38 @@ a {
     font-weight: bold;
     font-size: 2rem;
   }
+}
+
+@mixin btn {
+  background-color: $principal;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  color: $letrabtn;
+  cursor: pointer;
+  text-align: center;
+  height: 1.2em;
+  margin: .5em;
+  display: inline-flex;
+}
+
+@mixin btn_hover {
+  background-color: rgba( $principal ,.8);
+}
+
+.btn {
+  @include btn();
+  
+  &:hover{
+    @include btn_hover()
+  }
+
+  &-large {
+    @include btn();
+    padding: 0.7em 2em;
+  }
+
+  &-large:hover{
+    @include btn_hover()
+  }
+  
 }
