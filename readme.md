@@ -6,4 +6,4 @@ mode version **12.13.0**
 
 install [sass](https://www.npmjs.com/package/sass) ``` npm install -g sass ```
 
-execute ``` sass --watch scss:css ```
+execute ``` sass --watch sass/index.scss css/index.css ```

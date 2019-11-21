@@ -1,0 +1,33 @@
+@mixin btn {
+    background-color: $principal;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    color: $letrabtn;
+    cursor: pointer;
+    text-align: center;
+    height: 1.2em;
+    margin: .5em;
+    display: inline-flex;
+  }
+  
+  @mixin btn_hover {
+    background-color: rgba( $principal ,.8);
+  }
+  
+  .btn {
+    @include btn();
+    
+    &:hover{
+      @include btn_hover()
+    }
+  
+    &-large {
+      @include btn();
+      padding: 0.7em 2em;
+    }
+  
+    &-large:hover{
+      @include btn_hover()
+    }
+    
+  }
