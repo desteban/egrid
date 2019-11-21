@@ -1,122 +1,118 @@
+/* ------------------------------- colores ---------------------------------------------- */
+$sombra: rgb(128, 126, 121);
+$fondo: rgb(255, 255, 255);
+$link: rgb(38, 178, 255);
 
-*{
-    background-color: rgb(255, 255, 255);
+/* --------------------------------- medidas ---------------------------------------------- */
+$padding: 10px;
+$h1: 3rem;
+$h2: 2.5rem;
+
+* {
+  background-color: $fondo;
+  font-family: "Roboto", sans-serif;
 }
 
+h1 {
+  font-size: $h1;
+}
+
+h2 {
+  font-size: $h2;
+}
+
+a {
+  color: $link;
+  cursor: pointer;
+}
+
+/* --------------------------------- media ----------------------------------------------- */
 /* telefonos */
-@media (max-width: 600px){  
 
-    .contenido{
-        margin: 2%;
+@media screen and (max-width: 600px) {
+  .contenido {
+    margin: 2%;
+  }
+
+  @for $i from 1 through 12 {
+    .s#{$i} {
+      width: $i * 8%;
     }
-
-    .s1 {width: 8.33%;}
-    .s2 {width: 16.66%;}
-    .s3 {width: 25%;}
-    .s4 {width: 33.33%;}
-    .s5 {width: 41.66%;}
-    .s6 {width: 50%;}
-    .s7 {width: 58.33%;}
-    .s8 {width: 66.66%;}
-    .s9 {width: 75%;}
-    .s10 {width: 83.33%;}
-    .s11 {width: 91.66%;}
-    .s12 {width: 100%;}
+  }
 }
 
 /* tablets */
-@media (max-width: 991px) and (min-width: 601px){
+@media screen and (max-width: 991px) and (min-width: 601px) {
+  .contenido {
+    margin: 0 5%;
+  }
 
-    .contenido{
-        margin: 0 5%;
+  @for $i from 1 through 12 {
+    .s#{$i} {
+      width: $i * 8%;
     }
+  }
 
-    .s1 {width: 8.33%;}
-    .s2 {width: 16.66%;}
-    .s3 {width: 25%;}
-    .s4 {width: 33.33%;}
-    .s5 {width: 41.66%;}
-    .s6 {width: 50%;}
-    .s7 {width: 58.33%;}
-    .s8 {width: 66.66%;}
-    .s9 {width: 75%;}
-    .s10 {width: 83.33%;}
-    .s11 {width: 91.66%;}
-    .s12 {width: 100%;}
-
-    .m1 {width: 8.33%;}
-    .m2 {width: 16.66%;}
-    .m3 {width: 25%;}
-    .m4 {width: 33.33%;}
-    .m5 {width: 41.66%;}
-    .m6 {width: 50%;}
-    .m7 {width: 58.33%;}
-    .m8 {width: 66.66%;}
-    .m9 {width: 75%;}
-    .m10 {width: 83.33%;}
-    .m11 {width: 91.66%;}
-    .m12 {width: 100%;}
+  @for $i from 1 through 12 {
+    .m#{$i} {
+      width: $i * 8%;
+    }
+  }
 }
 
 /* computadores */
-@media (min-width:992px){
-    .contenido{
-        margin: 0 15%;
+@media screen and (min-width: 992px) {
+  .contenido {
+    margin: 0 15%;
+  }
+
+  @for $i from 1 through 12 {
+    .s#{$i} {
+      width: $i * 8%;
     }
+  }
 
-    .s1 {width: 8.33%;}
-    .s2 {width: 16.66%;}
-    .s3 {width: 25%;}
-    .s4 {width: 33.33%;}
-    .s5 {width: 41.66%;}
-    .s6 {width: 50%;}
-    .s7 {width: 58.33%;}
-    .s8 {width: 66.66%;}
-    .s9 {width: 75%;}
-    .s10 {width: 83.33%;}
-    .s11 {width: 91.66%;}
-    .s12 {width: 100%;}
+  @for $i from 1 through 12 {
+    .m#{$i} {
+      width: $i * 8%;
+    }
+  }
 
-    .m1 {width: 8.33%;}
-    .m2 {width: 16.66%;}
-    .m3 {width: 25%;}
-    .m4 {width: 33.33%;}
-    .m5 {width: 41.66%;}
-    .m6 {width: 50%;}
-    .m7 {width: 58.33%;}
-    .m8 {width: 66.66%;}
-    .m9 {width: 75%;}
-    .m10 {width: 83.33%;}
-    .m11 {width: 91.66%;}
-    .m12 {width: 100%;}
-
-    .l1 {width: 8.33%;}
-    .l2 {width: 16.66%;}
-    .l3 {width: 25%;}
-    .l4 {width: 33.33%;}
-    .l5 {width: 41.66%;}
-    .l6 {width: 50%;}
-    .l7 {width: 58.33%;}
-    .l8 {width: 66.66%;}
-    .l9 {width: 75%;}
-    .l10 {width: 83.33%;}
-    .l11 {width: 91.66%;}
-    .l12 {width: 100%;}
+  @for $i from 1 through 12 {
+    .l#{$i} {
+      width: $i * 8%;
+    }
+  }
 }
 
-.row{
-    display: flex;
+.row {
+  display: flex;
 
-    /*flex-direction: row;
+  /*flex-direction: row;
     flex-wrap: wrap;*/
 
-    flex-flow: row wrap;
+  flex-flow: row wrap;
 
-    /*justify-content: space-between;*/
-    align-items: center;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.card{
-    background-color: rgb(255, 252, 240);
-    box-shadow: 0 10px 5px -5px rgb(128, 126, 121);
+.card {
+  margin: 5px 0px;
+  display: flex;
+  flex-flow: column wrap;
+  box-shadow: 0 10px 5px $sombra;
+
+  &:hover:after {
+    background-color: red;
+  }
+
+  div {
+    padding: $padding;
+  }
+
+  .title {
+    font-weight: bold;
+    font-size: 2rem;
+  }
 }
