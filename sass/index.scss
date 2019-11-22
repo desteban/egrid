@@ -7,8 +7,8 @@ $link: rgb(38, 178, 255);
 
 /* --------------------------------- medidas ---------------------------------------------- */
 $padding: 10px;
-$h1: 3rem;
-$h2: 2.5rem;
+$h1: 3em;
+$h2: 2.5em;
 
 * {
   background-color: $fondo;
@@ -97,7 +97,8 @@ a {
 
   justify-content: space-around;
   align-items: center;
+  background-color: rgba(0,0,0,0);
 }
 
 @import "./card.scss";
-@import "./text.scss"
+@import "./text.scss";

@@ -1,22 +1,47 @@
-
 .card {
-    margin: 5px 0px;
-    display: flex;
-    flex-flow: column wrap;
-    box-shadow: 0 3px 5px $sombra;
-    margin: .5em;
-  
-    &:hover {
-      background-color: red;
-      top: -50%;
-    }
-  
-    div {
-      padding: $padding;
-    }
-  
-    .title {
-      font-weight: bold;
-      font-size: 2rem;
+  margin: 5px 0px;
+  display: flex;
+  flex-flow: column wrap;
+  box-shadow: 0 3px 5px $sombra;
+  margin: 0.5em;
+  transition: all 0.5s;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  transition: all 5s;
+
+  div {
+    padding: 10px;
+  }
+
+  .head img {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+  }
+
+  @mixin title {
+    font-weight: bold;
+    font-size: 2.5em;
+  }
+  .title-flo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    @include title();
+  }
+
+  .title {
+    @include title();
+  }
+
+  .content {
+
+    .options{
+      border-top: 1px solid lightgray;
+      padding: 5px;
     }
   }
+}
