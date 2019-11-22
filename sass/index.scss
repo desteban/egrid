@@ -1,9 +1,12 @@
 /* ------------------------------- colores ---------------------------------------------- */
 $principal: rgb(36, 56, 255);
+$secundario: rgb(23, 164, 255);
 $letrabtn: rgb(255, 255, 255);
 $sombra: rgb(128, 126, 121);
 $fondo: rgb(255, 255, 255);
 $link: rgb(38, 178, 255);
+
+$tamanio_col: 7.5;
 
 /* --------------------------------- medidas ---------------------------------------------- */
 $padding: 10px;
@@ -32,57 +35,57 @@ a {
 /* telefonos */
 
 @media screen and (max-width: 600px) {
-  .contenido {
+  .container {
     margin: 2%;
   }
 
   @for $i from 1 through 12 {
     .s#{$i} {
-      width: $i * 8%;
+      width: $i * $tamanio_col+0%;
     }
   }
 }
 
 /* tablets */
 @media screen and (max-width: 991px) and (min-width: 601px) {
-  .contenido {
+  .container {
     margin: 0 5%;
   }
 
   @for $i from 1 through 12 {
     .s#{$i} {
-      width: $i * 8%;
+      width: $i * $tamanio_col+0%;
     }
   }
 
   @for $i from 1 through 12 {
     .m#{$i} {
-      width: $i * 8%;
+      width: $i * $tamanio_col+0%;
     }
   }
 }
 
 /* computadores */
 @media screen and (min-width: 992px) {
-  .contenido {
+  .container {
     margin: 0 15%;
   }
 
   @for $i from 1 through 12 {
     .s#{$i} {
-      width: $i * 8%;
+      width: $i * $tamanio_col+0%;
     }
   }
 
   @for $i from 1 through 12 {
     .m#{$i} {
-      width: $i * 8%;
+      width: $i * $tamanio_col+0%;
     }
   }
 
   @for $i from 1 through 12 {
     .l#{$i} {
-      width: $i * 8%;
+      width: $i * $tamanio_col+0%;
     }
   }
 }
@@ -95,7 +98,7 @@ a {
 
   flex-flow: row wrap;
 
-  justify-content: space-around;
+  //justify-content: space-around;
   align-items: center;
   background-color: rgba(0,0,0,0);
 }

@@ -1,17 +1,31 @@
+$texto_titulo: 2.5em;
+$texto_contenido: 1em;
+
 .card {
   margin: 5px 0px;
   display: flex;
   flex-flow: column wrap;
-  box-shadow: 0 3px 5px $sombra;
   margin: 0.5em;
   transition: all 0.5s;
   position: relative;
   text-align: center;
   overflow: hidden;
-  transition: all 5s;
+  transition: all 0.5s;
+  box-shadow: 0 5px 5px $sombra;
+  -webkit-box-shadow: 0 5px 5px $sombra;
+  -moz-box-shadow: 0 5px 5px $sombra;
+  //box-shadow: 8px 5px 5px 5px $sombra;
+
+  &:hover {
+    box-shadow: 10px 10px 20px $sombra;
+
+    .content {
+      padding: 8px;
+    }
+  }
 
   div {
-    padding: 10px;
+    padding: 15px;
   }
 
   .head img {
@@ -23,12 +37,13 @@
 
   @mixin title {
     font-weight: bold;
-    font-size: 2.5em;
+    font-size: $texto_titulo;
+    padding: 5px 15px;
   }
   .title-flo {
     position: absolute;
     top: 20px;
-    left: 20px;
+    left: 0px;
     background-color: rgba(255, 255, 255, 0);
     @include title();
   }
@@ -38,10 +53,26 @@
   }
 
   .content {
+    font-size: $texto_contenido;
 
-    .options{
+    .options {
       border-top: 1px solid lightgray;
       padding: 5px;
     }
+  }
+}
+
+@mixin panel {
+  padding: 5px;
+  border-radius: 1em;
+  margin: 2px;
+}
+.panel {
+  background: $secundario;
+  @include panel();
+
+  &-warning {
+    @include panel();
+    background: red;
   }
 }
