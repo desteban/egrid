@@ -1,4 +1,4 @@
-$texto_titulo: 2.5em;
+$texto_titulo: 2em;
 $texto_contenido: 1em;
 
 .card {
@@ -102,5 +102,10 @@ $texto_contenido: 1em;
   &-warning {
     @include panel();
     background: rgb(255, 243, 64);
+  }
+
+  &-error{
+    @include panel();
+    background: rgb(255, 43, 36);
   }
 }
