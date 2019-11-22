@@ -2,37 +2,19 @@ $texto_titulo: 2.5em;
 $texto_contenido: 1em;
 
 .card {
-  margin: 5px 0px;
-  display: flex;
-  flex-flow: column wrap;
-  margin: 0.5em;
-  transition: all 0.5s;
-  position: relative;
-  text-align: center;
-  overflow: hidden;
-  transition: all 0.5s;
-  box-shadow: 0 5px 5px $sombra;
-  -webkit-box-shadow: 0 5px 5px $sombra;
-  -moz-box-shadow: 0 5px 5px $sombra;
-  //box-shadow: 8px 5px 5px 5px $sombra;
-
-  &:hover {
-    box-shadow: 10px 10px 20px $sombra;
-
-    .content {
-      padding: 8px;
-    }
-  }
-
-  div {
-    padding: 15px;
-  }
-
-  .head img {
+  @mixin card {
+    margin: 5px 0px;
+    display: flex;
+    flex-flow: column wrap;
+    margin: 0.5em;
+    transition: all 0.5s;
     position: relative;
-    display: inline-block;
-    width: 100%;
-    height: auto;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.4s;
+    box-shadow: 0 5px 5px $sombra;
+    -webkit-box-shadow: 0 5px 5px $sombra;
+    -moz-box-shadow: 0 5px 5px $sombra;
   }
 
   @mixin title {
@@ -40,39 +22,85 @@ $texto_contenido: 1em;
     font-size: $texto_titulo;
     padding: 5px 15px;
   }
-  .title-flo {
-    position: absolute;
-    top: 20px;
-    left: 0px;
-    background-color: rgba(255, 255, 255, 0);
-    @include title();
+
+  @mixin contenidoCard {
+    div {
+      padding: 15px;
+    }
+
+    .head img {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      height: auto;
+    }
+
+    .title-flo {
+      position: absolute;
+      top: 20px;
+      left: 0px;
+      background-color: rgba(255, 255, 255, 0);
+      @include title();
+    }
+
+    .title {
+      @include title();
+    }
+
+    .content {
+      font-size: $texto_contenido;
+
+      .options {
+        border-top: 1px solid lightgray;
+        padding: 5px;
+      }
+    }
   }
 
-  .title {
-    @include title();
+  @include card();
+
+  &_radius {
+    @include card();
+    border-radius: 1em;
+
+    @include contenidoCard();
   }
 
-  .content {
-    font-size: $texto_contenido;
+  @mixin card_hover {
+    box-shadow: 10px 10px 20px $sombra;
+    border: 1px solid lightgray;
 
-    .options {
-      border-top: 1px solid lightgray;
+    .content {
       padding: 5px;
     }
   }
+
+  &:hover {
+    border-radius: 1em;
+    @include card_hover();
+  }
+
+  &_radius:hover {
+    @include card_hover();
+  }
+
+  @include contenidoCard();
 }
 
+//------------------------------- PANEL ----------------------------------------
+
 @mixin panel {
-  padding: 5px;
+  padding: 1em;
   border-radius: 1em;
-  margin: 2px;
+  margin: .3em;
 }
+
 .panel {
   background: $secundario;
   @include panel();
 
   &-warning {
     @include panel();
-    background: red;
+    background: rgb(255, 243, 64);
   }
 }
