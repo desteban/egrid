@@ -1,0 +1,27 @@
+{
+  "name": "egrid",
+  "version": "0.0.1",
+  "description": "<p align=\"center\"><img src=\"https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg\" style=\"height: 70px;\"></p>",
+  "main": "index.js",
+  "dependencies": {
+    "headroom.js": "^0.10.3",
+    "sass": "^1.23.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desteban/egrid.git"
+  },
+  "keywords": [
+    "grid"
+  ],
+  "author": "desteban",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/desteban/egrid/issues"
+  },
+  "homepage": "https://github.com/desteban/egrid#readme"
+}

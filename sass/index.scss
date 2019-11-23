@@ -12,6 +12,7 @@ $tamanio_col: 8;
 $padding: 10px;
 $h1: 3em;
 $h2: 2.5em;
+$height_nav: 60px;
 
 * {
   background-color: $fondo;
@@ -103,5 +104,10 @@ a {
   background-color: rgba(0,0,0,0);
 }
 
+.body{
+  margin-top: $height_nav+10;
+}
+
 @import "./card.scss";
 @import "./text.scss";
+@import "./nav.scss";
