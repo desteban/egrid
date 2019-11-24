@@ -24,7 +24,7 @@ $texto_contenido: 1em;
   }
 
   @mixin contenidoCard {
-    div {
+    .content {
       padding: 10px;
     }
 
@@ -57,15 +57,6 @@ $texto_contenido: 1em;
     }
   }
 
-  @include card();
-
-  &_radius {
-    @include card();
-    border-radius: 1em;
-
-    @include contenidoCard();
-  }
-
   @mixin card_hover {
     box-shadow: 10px 10px 20px $sombra;
     border: 1px solid lightgray;
@@ -73,6 +64,22 @@ $texto_contenido: 1em;
     .content {
       padding: 5px;
     }
+  }
+
+  //------------------ card default --------------------
+  @include card();
+  @include contenidoCard();
+
+  .head img {
+    width: 100%;
+  }
+  //------------------ /card default --------------------
+
+  &_radius {
+    @include card();
+    border-radius: 1em;
+
+    @include contenidoCard();
   }
 
   &:hover {
@@ -91,6 +98,7 @@ $texto_contenido: 1em;
 
     img {
       width: 100%;
+      transition: all 0.5s;
     }
 
     .hover_content {
@@ -100,7 +108,7 @@ $texto_contenido: 1em;
       padding: 0.5em;
       color: rgb(255, 255, 255);
       transform: translateY(100%);
-      transition: all .5s;
+      transition: all 0.5s;
 
       .title {
         background: rgba(0, 0, 0, 0);
@@ -113,12 +121,15 @@ $texto_contenido: 1em;
       }
     }
   }
+
   &_hover:hover .hover_content {
     transform: translateY(0%);
-    background: rgba(0, 0, 0, .7);
+    background: rgba(0, 0, 0, 0.7);
   }
 
-  @include contenidoCard();
+  &_hover:hover img {
+    transform: scale(1.2);
+  }
 }
 
 //------------------------------- PANEL ----------------------------------------

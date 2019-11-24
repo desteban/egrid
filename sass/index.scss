@@ -33,18 +33,60 @@ a {
 }
 
 /* --------------------------------- media ----------------------------------------------- */
-/* telefonos */
 
+@mixin small {
+  @for $i from 1 through 12 {
+    .s#{$i} {
+      width: $i * $tamanio_col + 0%;
+    }
+  }
+
+  .hide {
+    display: none;
+  }
+}
+
+@mixin med {
+  @for $i from 1 through 12 {
+    .m#{$i} {
+      width: $i * $tamanio_col + 0%;
+    }
+  }
+}
+
+@mixin large {
+  @for $i from 1 through 12 {
+    .l#{$i} {
+      width: $i * $tamanio_col + 0%;
+    }
+  }
+}
+
+@mixin hide-m-s {
+  .hide-m-s{
+    display: none;
+  }
+}
+
+@mixin hide-m-l {
+  .hide-m-l{
+    display: none;
+  }
+}
+
+/* telefonos */
 @media screen and (max-width: 600px) {
   .container {
     margin: 2%;
   }
 
-  @for $i from 1 through 12 {
-    .s#{$i} {
-      width: $i * $tamanio_col+0%;
-    }
+  @include small();
+
+  .hide-s {
+    display: none;
   }
+
+  @include hide-m-s();
 }
 
 /* tablets */
@@ -53,17 +95,15 @@ a {
     margin: 0 5%;
   }
 
-  @for $i from 1 through 12 {
-    .s#{$i} {
-      width: $i * $tamanio_col+0%;
-    }
+  @include small();
+  @include med();
+
+  .hide-m {
+    display: none;
   }
 
-  @for $i from 1 through 12 {
-    .m#{$i} {
-      width: $i * $tamanio_col+0%;
-    }
-  }
+  @include hide-m-s();
+  @include hide-m-l();
 }
 
 /* computadores */
@@ -72,23 +112,15 @@ a {
     margin: 0 15%;
   }
 
-  @for $i from 1 through 12 {
-    .s#{$i} {
-      width: $i * $tamanio_col+0%;
-    }
+  @include small();
+  @include med();
+  @include large();
+
+  .hide-l {
+    display: none;
   }
 
-  @for $i from 1 through 12 {
-    .m#{$i} {
-      width: $i * $tamanio_col+0%;
-    }
-  }
-
-  @for $i from 1 through 12 {
-    .l#{$i} {
-      width: $i * $tamanio_col+0%;
-    }
-  }
+  @include hide-m-l();
 }
 
 .row {
@@ -99,13 +131,13 @@ a {
 
   flex-flow: row wrap;
 
-  justify-content: space-between;
+  //justify-content: space-between;
   align-items: center;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
 }
 
-.body{
-  margin-top: $height_nav+10;
+.body {
+  margin-top: $height_nav + 10;
 }
 
 @import "./card.scss";
