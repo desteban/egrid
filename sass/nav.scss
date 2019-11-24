@@ -1,1 +1,107 @@
 //$principal: rgb(36, 56, 255);
+//$height_nav: 60px;
+
+header {
+  background: $principal;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+header > div {
+  padding: 0.3em;
+}
+
+.nav {
+  @mixin nav {
+    position: relative;
+    height: $height_nav;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0);
+  }
+
+  @mixin contenido-nav {
+    div {
+      background-color: rgba(0, 0, 0, 0);
+      padding: 0.2em;
+    }
+
+    a {
+      background-color: rgba(0, 0, 0, 0);
+      color: $link;
+      cursor: pointer;
+    }
+
+    .logo img {
+      vertical-align: top;
+      height: $height_nav;
+    }
+
+    .logo .btn-menu {
+      display: none;
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      font-size: 1em;
+    }
+
+    .enlaces {
+      display: inline-block;
+      text-align: right;
+    }
+
+    .enlaces a {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      display: inline-block;
+      padding: 1em;
+      text-align: center;
+      font-size: 1em;
+    }
+
+    .enlaces a:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .enlaces i {
+      margin-right: 5px;
+    }
+  }
+
+  @mixin efectos {
+    .headroom {
+      transition: transform 0.3s ease;
+    }
+
+    .headroom--pinned {
+        transform: translateY(0%);
+    }
+
+    .headroom--unpinned{
+        transform: translateX(-100%);
+    }
+  }
+
+  @include nav();
+  @include contenido-nav();
+
+  &-center {
+    @include nav();
+    justify-content: space-evenly;
+
+    @include contenido-nav();
+  }
+}
+
+.headroom--pinned {
+  display: block;
+}
+.headroom--unpinned {
+  display: none;
+}

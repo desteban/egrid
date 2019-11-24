@@ -19,19 +19,6 @@ $height_nav: 60px;
   font-family: "Roboto", sans-serif;
 }
 
-h1 {
-  font-size: $h1;
-}
-
-h2 {
-  font-size: $h2;
-}
-
-a {
-  color: $link;
-  cursor: pointer;
-}
-
 /* --------------------------------- media ----------------------------------------------- */
 
 @mixin small {
