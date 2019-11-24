@@ -74,20 +74,6 @@ header > div {
     }
   }
 
-  @mixin efectos {
-    .headroom {
-      transition: transform 0.3s ease;
-    }
-
-    .headroom--pinned {
-        transform: translateY(0%);
-    }
-
-    .headroom--unpinned{
-        transform: translateX(-100%);
-    }
-  }
-
   @include nav();
   @include contenido-nav();
 
@@ -96,6 +82,33 @@ header > div {
     justify-content: space-evenly;
 
     @include contenido-nav();
+  }
+
+  @media screen and (max-width: 991px) {
+      
+    & {
+        flex-direction: column;
+    }
+
+    & .enlaces{
+        display: none;
+    }
+
+    & .logo {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 1em;
+
+        a{
+            margin: 0 2em;
+        }
+    }
+
+    & .logo .btn-menu{
+        display: block;
+    }
   }
 }
 

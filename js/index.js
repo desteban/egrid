@@ -11,5 +11,3 @@ var myElement = document.querySelector("header");
 var headroom  = new Headroom(myElement);
 // initialise
 headroom.init();
-
-alert('Hola mundo')
