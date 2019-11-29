@@ -2,155 +2,155 @@ $texto_titulo: 2em;
 $texto_contenido: 1em;
 
 .card {
-  @mixin card {
-    margin: 5px 0px;
-    display: flex;
-    flex-flow: column wrap;
-    margin: 0.5em;
-    transition: all 0.5s;
-    position: relative;
-    text-align: center;
-    overflow: hidden;
-    transition: all 0.4s;
-    box-shadow: 0 5px 5px $sombra;
-    -webkit-box-shadow: 0 5px 5px $sombra;
-    -moz-box-shadow: 0 5px 5px $sombra;
-  }
+	@mixin card {
+		margin: 5px 0px;
+		display: flex;
+		flex-flow: column wrap;
+		margin: 0.5em;
+		transition: all 0.5s;
+		position: relative;
+		text-align: center;
+		overflow: hidden;
+		transition: all 0.4s;
+		box-shadow: 0 5px 5px $sombra;
+		-webkit-box-shadow: 0 5px 5px $sombra;
+		-moz-box-shadow: 0 5px 5px $sombra;
+	}
 
-  @mixin title {
-    font-weight: bold;
-    font-size: $texto_titulo;
-    padding: 5px 15px;
-  }
+	@mixin title {
+		font-weight: bold;
+		font-size: $texto_titulo;
+		padding: 5px 15px;
+	}
 
-  @mixin contenidoCard {
-    .content {
-      padding: 10px;
-    }
+	@mixin contenidoCard {
+		.content {
+			padding: 10px;
+		}
 
-    .head img {
-      position: relative;
-      display: inline-block;
-      width: 100%;
-      height: auto;
-    }
+		.head img {
+			position: relative;
+			display: inline-block;
+			width: 100%;
+			height: auto;
+		}
 
-    .title-flo {
-      position: absolute;
-      top: 20px;
-      left: 0px;
-      background-color: rgba(255, 255, 255, 0);
-      @include title();
-    }
+		.title-flo {
+			position: absolute;
+			top: 20px;
+			left: 0px;
+			background-color: rgba(255, 255, 255, 0);
+			@include title();
+		}
 
-    .title {
-      @include title();
-    }
+		.title {
+			@include title();
+		}
 
-    .content {
-      font-size: $texto_contenido;
+		.content {
+			font-size: $texto_contenido;
 
-      .options {
-        border-top: 1px solid lightgray;
-        padding: 5px;
-      }
-    }
-  }
+			.options {
+				border-top: 1px solid lightgray;
+				padding: 5px;
+			}
+		}
+	}
 
-  @mixin card_hover {
-    box-shadow: 10px 10px 20px $sombra;
-    border: 1px solid lightgray;
+	@mixin card_hover {
+		box-shadow: 10px 10px 20px $sombra;
+		border: 1px solid lightgray;
 
-    .content {
-      padding: 5px;
-    }
-  }
+		.content {
+			padding: 5px;
+		}
+	}
 
-  //------------------ card default --------------------
-  @include card();
-  @include contenidoCard();
+	//------------------ card default --------------------
+	@include card();
+	@include contenidoCard();
 
-  .head img {
-    width: 100%;
-  }
-  //------------------ /card default --------------------
+	.head img {
+		width: 100%;
+	}
+	//------------------ /card default --------------------
 
-  &_radius {
-    @include card();
-    border-radius: 1em;
+	&_radius {
+		@include card();
+		border-radius: 1em;
 
-    @include contenidoCard();
-  }
+		@include contenidoCard();
+	}
 
-  &:hover {
-    border-radius: 1em;
-    @include card_hover();
-  }
+	&:hover {
+		border-radius: 1em;
+		@include card_hover();
+	}
 
-  &_radius:hover {
-    @include card_hover();
-  }
+	&_radius:hover {
+		@include card_hover();
+	}
 
-  &_hover {
-    margin: 5px 2px;
-    position: relative;
-    overflow: hidden;
+	&_hover {
+		margin: 5px 2px;
+		position: relative;
+		overflow: hidden;
 
-    img {
-      width: 100%;
-      transition: all 0.5s;
-    }
+		img {
+			width: 100%;
+			transition: all 0.5s;
+		}
 
-    .hover_content {
-      position: absolute;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0);
-      padding: 0.5em;
-      color: rgb(255, 255, 255);
-      transform: translateY(100%);
-      transition: all 0.5s;
+		.hover_content {
+			position: absolute;
+			bottom: 0;
+			background: rgba(0, 0, 0, 0);
+			padding: 0.5em;
+			color: rgb(255, 255, 255);
+			transform: translateY(100%);
+			transition: all 0.5s;
 
-      .title {
-        background: rgba(0, 0, 0, 0);
-        font-size: 1.2em;
-      }
+			.title {
+				background: rgba(0, 0, 0, 0);
+				font-size: 1.2em;
+			}
 
-      .hover_text {
-        background: rgba(0, 0, 0, 0);
-        font-size: 0.9em;
-      }
-    }
-  }
+			.hover_text {
+				background: rgba(0, 0, 0, 0);
+				font-size: 0.9em;
+			}
+		}
+	}
 
-  &_hover:hover .hover_content {
-    transform: translateY(0%);
-    background: rgba(0, 0, 0, 0.7);
-  }
+	&_hover:hover .hover_content {
+		transform: translateY(0%);
+		background: rgba(0, 0, 0, 0.7);
+	}
 
-  &_hover:hover img {
-    transform: scale(1.2);
-  }
+	&_hover:hover img {
+		transform: scale(1.2);
+	}
 }
 
 //------------------------------- PANEL ----------------------------------------
 
 @mixin panel {
-  padding: 1em;
-  border-radius: 1em;
-  margin: 0.3em;
+	padding: 1em;
+	border-radius: 1em;
+	margin: 0.3em;
 }
 
 .panel {
-  background: $secundario;
-  @include panel();
+	background: $secundario;
+	@include panel();
 
-  &-warning {
-    @include panel();
-    background: rgb(255, 243, 64);
-  }
+	&-warning {
+		@include panel();
+		background: rgb(255, 243, 64);
+	}
 
-  &-error {
-    @include panel();
-    background: rgb(255, 43, 36);
-  }
+	&-error {
+		@include panel();
+		background: rgb(255, 43, 36);
+	}
 }

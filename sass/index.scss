@@ -15,118 +15,118 @@ $h2: 2.5em;
 $height_nav: 60px;
 
 * {
-  background-color: $fondo;
-  font-family: "Roboto", sans-serif;
+	background-color: $fondo;
+	font-family: 'Roboto', sans-serif;
 }
 
 /* --------------------------------- media ----------------------------------------------- */
 
 @mixin small {
-  @for $i from 1 through 12 {
-    .s#{$i} {
-      width: $i * $tamanio_col + 0%;
-    }
-  }
+	@for $i from 1 through 12 {
+		.s#{$i} {
+			width: $i * $tamanio_col + 0%;
+		}
+	}
 
-  .hide {
-    display: none;
-  }
+	.hide {
+		display: none;
+	}
 }
 
 @mixin med {
-  @for $i from 1 through 12 {
-    .m#{$i} {
-      width: $i * $tamanio_col + 0%;
-    }
-  }
+	@for $i from 1 through 12 {
+		.m#{$i} {
+			width: $i * $tamanio_col + 0%;
+		}
+	}
 }
 
 @mixin large {
-  @for $i from 1 through 12 {
-    .l#{$i} {
-      width: $i * $tamanio_col + 0%;
-    }
-  }
+	@for $i from 1 through 12 {
+		.l#{$i} {
+			width: $i * $tamanio_col + 0%;
+		}
+	}
 }
 
 @mixin hide-m-s {
-  .hide-m-s{
-    display: none;
-  }
+	.hide-m-s {
+		display: none;
+	}
 }
 
 @mixin hide-m-l {
-  .hide-m-l{
-    display: none;
-  }
+	.hide-m-l {
+		display: none;
+	}
 }
 
 /* telefonos */
 @media screen and (max-width: 600px) {
-  .container {
-    margin: 2%;
-  }
+	.container {
+		margin: 2%;
+	}
 
-  @include small();
+	@include small();
 
-  .hide-s {
-    display: none;
-  }
+	.hide-s {
+		display: none;
+	}
 
-  @include hide-m-s();
+	@include hide-m-s();
 }
 
 /* tablets */
 @media screen and (max-width: 991px) and (min-width: 601px) {
-  .container {
-    margin: 0 5%;
-  }
+	.container {
+		margin: 0 5%;
+	}
 
-  @include small();
-  @include med();
+	@include small();
+	@include med();
 
-  .hide-m {
-    display: none;
-  }
+	.hide-m {
+		display: none;
+	}
 
-  @include hide-m-s();
-  @include hide-m-l();
+	@include hide-m-s();
+	@include hide-m-l();
 }
 
 /* computadores */
 @media screen and (min-width: 992px) {
-  .container {
-    margin: 0 15%;
-  }
+	.container {
+		margin: 0 15%;
+	}
 
-  @include small();
-  @include med();
-  @include large();
+	@include small();
+	@include med();
+	@include large();
 
-  .hide-l {
-    display: none;
-  }
+	.hide-l {
+		display: none;
+	}
 
-  @include hide-m-l();
+	@include hide-m-l();
 }
 
 .row {
-  display: flex;
+	display: flex;
 
-  /*flex-direction: row;
+	/*flex-direction: row;
     flex-wrap: wrap;*/
 
-  flex-flow: row wrap;
+	flex-flow: row wrap;
 
-  //justify-content: space-between;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0);
+	//justify-content: space-between;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0);
 }
 
 .body {
-  margin-top: $height_nav + 10;
+	margin-top: $height_nav + 10;
 }
 
-@import "./card.scss";
-@import "./text.scss";
-@import "./nav.scss";
+@import './card.scss';
+@import './text.scss';
+@import './nav.scss';

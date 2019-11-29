@@ -1,58 +1,58 @@
 @mixin btn {
-  background-color: $principal;
-  padding: 0.5em 1em;
-  border-radius: 1em;
-  color: $letrabtn;
-  cursor: pointer;
-  text-align: center;
-  height: 1.2em;
-  margin: 0.5em;
-  display: inline-flex;
-  transition: all 0.2s;
+	background-color: $principal;
+	padding: 0.5em 1em;
+	border-radius: 1em;
+	color: $letrabtn;
+	cursor: pointer;
+	text-align: center;
+	height: 1.2em;
+	margin: 0.5em;
+	display: inline-flex;
+	transition: all 0.2s;
 }
 
 @mixin btn_hover {
-  background-color: rgba($principal, 0.8);
+	background-color: rgba($principal, 0.8);
 }
 
 .btn {
-  @include btn();
+	@include btn();
 
-  &:hover {
-    @include btn_hover();
-  }
+	&:hover {
+		@include btn_hover();
+	}
 
-  &-large {
-    @include btn();
-    padding: 0.7em 2em;
-  }
+	&-large {
+		@include btn();
+		padding: 0.7em 2em;
+	}
 
-  &-large:hover {
-    @include btn_hover();
-  }
+	&-large:hover {
+		@include btn_hover();
+	}
 }
 
 .center_text {
-  text-align: center;
+	text-align: center;
 }
 
 .white_text {
-  color: rgb(245, 245, 245);
+	color: rgb(245, 245, 245);
 }
 
 .black_text {
-  color: rgb(0, 0, 0);
+	color: rgb(0, 0, 0);
 }
 
 h1 {
-  font-size: $h1;
+	font-size: $h1;
 }
 
 h2 {
-  font-size: $h2;
+	font-size: $h2;
 }
 
 a {
-  color: $link;
-  cursor: pointer;
+	color: $link;
+	cursor: pointer;
 }

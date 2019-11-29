@@ -2,123 +2,122 @@
 //$height_nav: 60px;
 
 header {
-  background: $principal;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 100;
+	background: $principal;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 100;
 }
 
 header > div {
-  padding: 0.3em;
+	padding: 0.3em;
 }
 
 .nav {
-  @mixin nav {
-    position: relative;
-    height: $height_nav;
-    width: 100%;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(0, 0, 0, 0);
-  }
+	@mixin nav {
+		position: relative;
+		height: $height_nav;
+		width: 100%;
+		margin: auto;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		background: rgba(0, 0, 0, 0);
+	}
 
-  @mixin contenido-nav {
-    div {
-      background-color: rgba(0, 0, 0, 0);
-      padding: 0.2em;
-    }
+	@mixin contenido-nav {
+		div {
+			background-color: rgba(0, 0, 0, 0);
+			padding: 0.2em;
+		}
 
-    a {
-      background-color: rgba(0, 0, 0, 0);
-      color: $link;
-      cursor: pointer;
-    }
+		a {
+			background-color: rgba(0, 0, 0, 0);
+			color: $link;
+			cursor: pointer;
+		}
 
-    .logo img {
-      vertical-align: top;
-      height: $height_nav;
-    }
+		.logo img {
+			vertical-align: top;
+			height: $height_nav;
+		}
 
-    .logo .btn-menu {
-      display: none;
-      color: rgb(255, 255, 255);
-      text-decoration: none;
-      font-size: 1em;
-    }
+		.logo .btn-menu {
+			display: none;
+			color: rgb(255, 255, 255);
+			text-decoration: none;
+			font-size: 1em;
+		}
 
-    .enlaces {
-      display: inline-block;
-      text-align: right;
-    }
+		.enlaces {
+			display: inline-block;
+			text-align: right;
+		}
 
-    .enlaces a {
-      text-decoration: none;
-      color: rgb(255, 255, 255);
-      display: inline-block;
-      padding: 1em;
-      text-align: center;
-      font-size: 1em;
-    }
+		.enlaces a {
+			text-decoration: none;
+			color: rgb(255, 255, 255);
+			display: inline-block;
+			padding: 1em;
+			text-align: center;
+			font-size: 1em;
+		}
 
-    .enlaces a:hover {
-      background-color: rgba(0, 0, 0, 0.5);
-    }
+		.enlaces a:hover {
+			background-color: rgba(0, 0, 0, 0.5);
+		}
 
-    .enlaces i {
-      margin-right: 5px;
-    }
-  }
+		.enlaces i {
+			margin-right: 5px;
+		}
+	}
 
-  @include nav();
-  @include contenido-nav();
+	@include nav();
+	@include contenido-nav();
 
-  &-center {
-    @include nav();
-    justify-content: space-evenly;
+	&-center {
+		@include nav();
+		justify-content: space-evenly;
 
-    @include contenido-nav();
-  }
+		@include contenido-nav();
+	}
 
-  @media screen and (max-width: 991px) {
-      
-    & {
-        flex-direction: column;
-    }
+	@media screen and (max-width: 991px) {
+		& {
+			flex-direction: column;
+		}
 
-    & .enlaces{
-        display: none;
-    }
+		& .enlaces {
+			display: none;
+		}
 
-    & .logo {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        padding: 1em;
+		& .logo {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			width: 100%;
+			padding: 1em;
 
-        a{
-            margin: 0 2em;
-        }
-    }
+			a {
+				margin: 0 2em;
+			}
+		}
 
-    & .logo .btn-menu{
-        display: block;
-    }
-  }
+		& .logo .btn-menu {
+			display: block;
+		}
+	}
 }
 
 .headroom {
-    will-change: transform;
-    transition: transform 200ms linear;
+	will-change: transform;
+	transition: transform 200ms linear;
 }
 .headroom--pinned {
-    transform: translateY(0%);
+	transform: translateY(0%);
 }
 .headroom--unpinned {
-    transform: translateY(-100%);
+	transform: translateY(-100%);
 }
