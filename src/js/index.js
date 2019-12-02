@@ -1,1 +1,1 @@
-require('headroom.js/dist/headroom');
+const headroom = require('headroom.js/dist/headroom');

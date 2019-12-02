@@ -24,6 +24,12 @@ function js() {
 		.pipe(gulp.dest('dist/js'));
 }
 
+function headroom() {
+	return gulp
+		.src(['node_modules/headroom.js/dist/headroom.js'])
+		.pipe(gulp.dest('src/js'));
+}
+
 function font_awesome() {
 	return gulp
 		.src(['node_modules/font-awesome/css/font-awesome.min.css'])
@@ -35,6 +41,7 @@ function fonts() {
 }
 
 gulp.task('default', () => {
+	headroom();
 	css();
 	js();
 	font_awesome();
