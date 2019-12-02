@@ -13,9 +13,11 @@ $padding: 10px;
 $h1: 3em;
 $h2: 2.5em;
 $height_nav: 60px;
+$margin_s: 0 2%;
+$margin_m: 0 5%;
+$margin_l: 0 15%;
 
 * {
-	background-color: $fondo;
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -24,7 +26,11 @@ $height_nav: 60px;
 @mixin small {
 	@for $i from 1 through 12 {
 		.s#{$i} {
-			width: $i * $tamanio_col + 0%;
+			@if $i == 12 {
+				width: 100%;
+			} @else {
+				width: $i * $tamanio_col + 0%;
+			}
 		}
 	}
 
@@ -64,7 +70,7 @@ $height_nav: 60px;
 /* telefonos */
 @media screen and (max-width: 600px) {
 	.container {
-		margin: 2%;
+		margin: $margin_s;
 	}
 
 	@include small();
@@ -79,7 +85,7 @@ $height_nav: 60px;
 /* tablets */
 @media screen and (max-width: 991px) and (min-width: 601px) {
 	.container {
-		margin: 0 5%;
+		margin: $margin_m;
 	}
 
 	@include small();
@@ -96,7 +102,7 @@ $height_nav: 60px;
 /* computadores */
 @media screen and (min-width: 992px) {
 	.container {
-		margin: 0 15%;
+		margin: $margin_l;
 	}
 
 	@include small();

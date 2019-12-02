@@ -82,6 +82,7 @@ header > div {
 		justify-content: space-evenly;
 
 		@include contenido-nav();
+		align-content: center;
 	}
 
 	@media screen and (max-width: 991px) {
