@@ -6,7 +6,7 @@ mode version **12.13.0**
 
 Instalar y actualizar dependencias`npm iupdate`
 
-compilar `npm start`
+compilar `npx webpack`
 
 ## Font-awesome 5.11.2
 

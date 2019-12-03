@@ -1,6 +1,3 @@
 node_modules
-dist/css
-dist/fonts
-dist/js
-dist/webfonts
-src/js/headroom.js
+dist
+dist/**/*
