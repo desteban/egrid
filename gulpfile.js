@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const browserSync = require('browser-sync');
 const sass = require('gulp-sass');
 const autoPrefixer = require('gulp-autoprefixer');
+const babel = require('gulp-babel');
 
 //tareas
 
@@ -19,9 +20,13 @@ function css() {
 }
 
 function js() {
-	return gulp
-		.src(['node_modules/headroom.js/dist/headroom.js', 'src/js/index.js'])
-		.pipe(gulp.dest('dist/js'));
+	return (
+		gulp
+			.src(['src/js/index.js'])
+			//.pipe(babel({ presets: ['env'] }))
+			.pipe(babel({ presets: ['@babel/env'] }))
+			.pipe(gulp.dest('dist/js'))
+	);
 }
 
 function headroom() {

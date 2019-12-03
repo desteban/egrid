@@ -1,8 +1,8 @@
 {
 	"name": "egrid",
 	"version": "0.0.1",
-	"description": "<p align=\"center\"><img src=\"https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg\" style=\"height: 70px;\"></p>",
-	"main": "index.js",
+	"description": "",
+	"main": "",
 	"scripts": {
 		"start": "gulp"
 	},
@@ -24,9 +24,12 @@
 	},
 	"homepage": "https://github.com/desteban/egrid#readme",
 	"devDependencies": {
+		"@babel/core": "^7.7.4",
+		"@babel/preset-env": "^7.7.4",
 		"browser-sync": "^2.26.7",
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^7.0.1",
+		"gulp-babel": "^8.0.0",
 		"gulp-cli": "^2.2.0",
 		"gulp-sass": "^4.0.2",
 		"sass": "^1.23.7"
