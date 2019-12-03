@@ -5,6 +5,7 @@ mode version **12.13.0**
 Instalar y actualizar dependencias`npm update`
 
 compilar `npx webpack -p`
+
 puerto 3000 utilizado para servidor de desarrollo `npx webpack-dev-server`
 
 ## Font-awesome 5.11.2

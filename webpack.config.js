@@ -22,6 +22,19 @@ module.exports = {
 			{
 				test: /\.js$/,
 				loader: 'babel-loader'
+			},
+			{
+				test: /\.(png|jpg|svg|jpeg|gif|webp)/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[name].[ext]',
+							outputPath: 'img/',
+							useRelativePath: true
+						}
+					}
+				]
 			}
 		]
 	},
