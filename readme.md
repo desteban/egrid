@@ -1,13 +1,11 @@
-<p align="center"><img src="https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg" style="height: 70px;"></p>
-
 # eGrid
 
 mode version **12.13.0**
 
-Instalar y actualizar dependencias`npm iupdate`
+Instalar y actualizar dependencias`npm update`
 
 compilar `npx webpack -p`
-desarrollo `npx webpack-dev-server` puerto 3000
+puerto 3000 utilizado para servidor de desarrollo `npx webpack-dev-server`
 
 ## Font-awesome 5.11.2
 
