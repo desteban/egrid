@@ -4,7 +4,7 @@ const path = require('path'),
 
 module.exports = {
 	entry: {
-		app: './src/js/app.js'
+		app: ['@babel/polyfill', './src/js/app.js']
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -18,6 +18,10 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				use: [miniCss.loader, 'css-loader', 'sass-loader']
+			},
+			{
+				test: /\.js$/,
+				loader: 'babel-loader'
 			}
 		]
 	},
