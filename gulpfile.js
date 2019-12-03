@@ -32,12 +32,9 @@ function headroom() {
 
 function font_awesome() {
 	return gulp
-		.src(['node_modules/font-awesome/css/font-awesome.min.css'])
+		.src(['src/sass/font-awesome.scss'])
+		.pipe(sass({ outputStyle: 'compressed' }))
 		.pipe(gulp.dest('dist/css'));
-}
-
-function fonts() {
-	return gulp.src('node_modules/font-awesome/fonts/*').pipe(gulp.dest('dist/fonts'));
 }
 
 gulp.task('default', () => {
@@ -45,7 +42,6 @@ gulp.task('default', () => {
 	css();
 	js();
 	font_awesome();
-	fonts();
 	//gulp.watch('src/sass/*.scss').on('change', css());
 	gulp.watch('src/sass/*.scss', gulp.series(css));
 	gulp.watch('src/js/*.js', gulp.series(js));

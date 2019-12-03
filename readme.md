@@ -1,9 +1,15 @@
 <p align="center"><img src="https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg" style="height: 70px;"></p>
 
-#   eGrid
+# eGrid
 
 mode version **12.13.0**
 
-install [sass](https://www.npmjs.com/package/sass) ``` npm install -g sass ```
+Instalar y actualizar dependencias`npm iupdate`
 
-execute ``` sass --watch sass/index.scss css/index.css ```
+compilar `npm start`
+
+## Font-awesome 5.11.2
+
+-   Descargar [font-awesome](https://fontawesome.com/download) y extraer archivos
+-   copiar la carpeta **webfonts** y pegarla dentro de la carpeta **dist** dentro del projecto
+-   Si maneja una version diferente de font awesome recomendamos copiar el archivo **all.css** en la carpeta **src/sass** y cambiar su extencion de css a scss y renombrar el archivo a font-awesome
