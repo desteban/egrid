@@ -1,7 +1,3 @@
-* {
-	font-family: 'Roboto', sans-serif;
-}
-
 @mixin small {
 	@for $i from 1 through 12 {
 		.s#{$i} {

@@ -1,3 +1,8 @@
+//Estilo de letra
+* {
+	font-family: 'Roboto', sans-serif;
+}
+
 @mixin btn {
 	background-color: $principal;
 	padding: 0.5em 1em;
@@ -13,6 +18,10 @@
 
 @mixin btn_hover {
 	background-color: rgba($principal, 0.8);
+}
+
+@mixin ancho100 {
+	width: 100%;
 }
 
 .btn {
@@ -46,26 +55,32 @@
 
 h1 {
 	font-size: $h1;
+	@include ancho100();
 }
 
 h2 {
 	font-size: $h2;
+	@include ancho100();
 }
 
 h3 {
 	font-size: $h3;
+	@include ancho100();
 }
 
 h4 {
 	font-size: $h4;
+	@include ancho100();
 }
 
 h5 {
 	font-size: $h5;
+	@include ancho100();
 }
 
 h6 {
 	font-size: $h6;
+	@include ancho100();
 }
 
 a {
