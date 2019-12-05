@@ -1,26 +1,5 @@
-/* ------------------------------- colores ---------------------------------------------- */
-$principal: rgb(36, 56, 255);
-$secundario: rgb(23, 164, 255);
-$letrabtn: rgb(255, 255, 255);
-$sombra: rgb(128, 126, 121);
-$fondo: rgb(255, 255, 255);
-$link: rgb(38, 178, 255);
-
-$tamanio_col: 8;
-
-/* --------------------------------- medidas ---------------------------------------------- */
-$padding: 10px;
-$h1: 3em;
-$h2: 2.5em;
-$h3: 2.3em;
-$h4: 2em;
-$h5: 1.8em;
-$h6: 1.5em;
-$height_nav: 60px;
-$margin_s: 0 2%;
-$margin_m: 0 5%;
-$margin_l: 0 15%;
-
+@import './colors.scss';
+@import './tamanio.scss';
 @import './grid.scss';
 @import './card.scss';
 @import './text.scss';
