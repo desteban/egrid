@@ -1,5 +1,9 @@
 import '../sass/index.scss';
+import '../sass/font-awesome.scss';
 import Headroom from 'headroom.js';
+
+//font-awesome
+require('./font-awesome');
 require('./pictures');
 
 //iniciar headroom

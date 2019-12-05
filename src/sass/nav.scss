@@ -10,81 +10,16 @@ header {
 	z-index: 100;
 }
 
-header > div {
-	padding: 0.3em;
+@mixin nav {
+	display: flex;
+	height: $height_nav;
+	align-items: center;
+	flex-flow: row wrap;
+	position: relative;
+	background-color: $principal;
 }
 
-.nav {
-	@mixin nav {
-		position: relative;
-		height: $height_nav;
-		width: 100%;
-		margin: auto;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-		background: rgba(0, 0, 0, 0);
-	}
-
-	@mixin contenido-nav {
-		div {
-			background-color: rgba(0, 0, 0, 0);
-			padding: 0.2em;
-		}
-
-		a {
-			background-color: rgba(0, 0, 0, 0);
-			color: $link;
-			cursor: pointer;
-		}
-
-		.logo img {
-			vertical-align: top;
-			height: $height_nav;
-		}
-
-		.logo .btn-menu {
-			display: none;
-			color: rgb(255, 255, 255);
-			text-decoration: none;
-			font-size: 1em;
-		}
-
-		.enlaces {
-			display: inline-block;
-			text-align: right;
-		}
-
-		.enlaces a {
-			text-decoration: none;
-			color: rgb(255, 255, 255);
-			display: inline-block;
-			padding: 1em;
-			text-align: center;
-			font-size: 1em;
-		}
-
-		.enlaces a:hover {
-			background-color: rgba(0, 0, 0, 0.5);
-		}
-
-		.enlaces i {
-			margin-right: 5px;
-		}
-	}
-
-	@include nav();
-	@include contenido-nav();
-
-	&-center {
-		@include nav();
-		justify-content: space-evenly;
-
-		@include contenido-nav();
-		align-content: center;
-	}
-
+@mixin mediaNav {
 	@media screen and (max-width: 991px) {
 		& {
 			flex-direction: column;
@@ -110,6 +45,37 @@ header > div {
 			display: block;
 		}
 	}
+}
+
+.nav {
+	@include nav();
+
+	.logo {
+		width: 20%;
+
+		.btn-menu {
+			color: white;
+			display: none;
+		}
+	}
+
+	.enlaces {
+		width: 80%;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-end;
+
+		a {
+			padding: 1em;
+			color: white;
+		}
+
+		a:hover {
+			background: rgba(0, 0, 0, 0.3);
+		}
+	}
+
+	@include mediaNav();
 }
 
 .headroom {

@@ -24,13 +24,26 @@ module.exports = {
 				loader: 'babel-loader'
 			},
 			{
-				test: /\.(png|jpg|svg|jpeg|gif|webp)/,
+				test: /\.(png|jpg|jpeg|gif|webp)/,
 				use: [
 					{
 						loader: 'file-loader',
 						options: {
 							name: '[name].[ext]',
 							outputPath: 'img/',
+							useRelativePath: true
+						}
+					}
+				]
+			},
+			{
+				test: /\.(eot|svg|ttf|woff|woff2)/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[name].[ext]',
+							outputPath: 'webfonts/',
 							useRelativePath: true
 						}
 					}
