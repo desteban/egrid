@@ -5,6 +5,7 @@ import Headroom from 'headroom.js';
 //font-awesome
 require('./font-awesome');
 require('./pictures');
+require('./form');
 
 //iniciar headroom
 var myElement = document.querySelector('header');
