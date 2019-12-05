@@ -1,6 +1,6 @@
 //Estilo de letra
 * {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', sans-serif, Arial;
 }
 
 @mixin btn {
@@ -34,10 +34,22 @@
 	&-large {
 		@include btn();
 		padding: 0.7em 2em;
+
+		&:hover {
+			@include btn_hover();
+		}
 	}
 
-	&-large:hover {
-		@include btn_hover();
+	&-xxl {
+		width: 100%;
+		padding: 1em 2em;
+		text-align: center;
+		background-color: $principal;
+		border-radius: 1em;
+
+		&:hover {
+			@include btn_hover();
+		}
 	}
 }
 
@@ -86,4 +98,12 @@ h6 {
 a {
 	color: $link;
 	cursor: pointer;
+}
+
+.center {
+	width: 100%;
+	display: flex;
+
+	justify-content: center;
+	align-items: center;
 }

@@ -1,6 +1,4 @@
 node_modules
 dist
-src/img/**
-!src/img/**
-src/webfonts/**
-!src/webfonts/**
+src/img/*
+src/webfonts/*
