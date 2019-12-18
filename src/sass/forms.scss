@@ -1,5 +1,17 @@
 .form {
+	@mixin beforeMx {
+		content: '';
+		height: 1em;
+		width: 1em;
+		display: inline-block;
+		background: none;
+		border: 3px solid rgba($label, 0.5);
+		position: absolute;
+		left: 17px;
+		top: 3px;
+	}
 	padding: 1em;
+
 	//-----------------------------------   Radio y Checkbox
 	input[type='radio'].radio,
 	input[type='checkbox'].checkbox {
@@ -19,19 +31,6 @@
 			&:hover {
 				background-color: $label;
 			}
-
-			&::before {
-				content: '';
-				height: 1em;
-				width: 1em;
-				display: inline-block;
-				background: none;
-				border: 3px solid rgba($label, 0.5);
-				border-radius: 50%;
-				position: absolute;
-				left: 17px;
-				top: 3px;
-			}
 		}
 
 		&:checked + label {
@@ -43,10 +42,31 @@
 				display: none;
 			}
 		}
+
+		&.error + label {
+			color: rgba(red, 0.8);
+
+			&:hover {
+				background-color: rgba(red, 0.2);
+			}
+
+			&:before {
+				border-color: rgba(red, 0.8);
+			}
+		}
 	}
 
 	.checkbox + label:before {
 		border-radius: 5px;
+	}
+
+	input[type='radio'].radio + label::before {
+		@include beforeMx();
+		border-radius: 50%;
+	}
+
+	input[type='checkbox'].checkbox + label::before {
+		@include beforeMx();
 	}
 
 	//-----------------------------------   /Radio y Checkbox
