@@ -112,6 +112,10 @@
 				border-bottom: 2px solid rgba(red, 0.8);
 				+ label {
 					color: rgba(red, 0.8);
+
+					&.active {
+						color: rgba(red, 0.8);
+					}
 				}
 			}
 		}

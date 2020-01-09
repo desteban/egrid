@@ -32,17 +32,21 @@ header {
 		& .logo {
 			display: flex;
 			flex-direction: row;
-			justify-content: space-between;
+			justify-content: inherit;
 			width: 100%;
 			padding: 1em;
 
 			a {
-				margin: 0 2em;
+				margin: 0 1em;
+				width: 80%;
 			}
 		}
 
 		& .logo .btn-menu {
 			display: block;
+			font-size: 1.5rem;
+			width: 20%;
+			cursor: grab;
 		}
 	}
 }
@@ -75,7 +79,41 @@ header {
 		}
 	}
 
+	input[type='checkbox'].nav-movile {
+		display: none;
+
+		&:checked .menu-movile {
+			display: block;
+		}
+	}
+
 	@include mediaNav();
+}
+
+.menu-movile {
+	position: fixed;
+	z-index: 110;
+	height: 105vh;
+	width: 100%;
+	top: 0;
+	left: -100%;
+	background-color: rgba(0, 0, 0, 0.479);
+	padding: 0;
+	margin: 0;
+	transition: all 0.4s;
+
+	& .show {
+		left: 0;
+	}
+
+	.content {
+		position: absolute;
+		background-color: white;
+		width: 80%;
+		font-size: 1.2rem;
+		height: 102vh;
+		top: 0;
+	}
 }
 
 .headroom {
