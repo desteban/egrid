@@ -1,12 +1,8 @@
 # eGrid
 
-mode version **12.13.0**
+Build `npm run build`
 
-Instalar y actualizar dependencias`npm update`
-
-compilar `npx webpack -p`
-
-puerto 3000 utilizado para servidor de desarrollo `npx webpack-dev-server`
+puerto 3000 utilizado para servidor de desarrollo `npm run dev`
 
 ## Font-awesome 5.11.2
 
