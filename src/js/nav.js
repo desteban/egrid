@@ -1,15 +1,22 @@
-/*(function() {
-	//buscar boton para mostrar el menu
-	let btn = document.getElementsByClassName('btn-menu');
-	let menu_movile = document.querySelectorAll('div.menu-movile');
+(() => {
+	let btn = document.querySelector('.btn-menu');
 
-	var focusbtn = function() {
-		menu_movile.className = 'menu-movile show';
+	const showMenu = () => {
+		sideNav = document.querySelector('.sidenav');
 	};
 
-	var blurbtn = function() {
-		menu_movile.className = 'menu-movile';
+	const hideMenu = () => {
+		console.log('hide...');
 	};
 
-	btn.addEventListener('focus', focusbtn);
-})();*/
+	const toogle = () => {
+		console.log('toogle');
+
+		sideNav = document.querySelector('.sidenav');
+		sideNav.classList.toggle('sidenav-show');
+	};
+
+	btn.addEventListener('focus', toogle);
+
+	btn.addEventListener('blur', toogle);
+})();
